@@ -12,6 +12,6 @@ Felter
 
 Game "1"--"2" Player : plays
 Board "1"--"1" Game : contains
-Die "2"--"1" Game : contains
+Die "1"--"1" Game : contains
 
 @enduml
