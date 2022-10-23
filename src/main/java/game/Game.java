@@ -17,31 +17,6 @@ public class Game
     }
     public void run()
     {
-        initialize();
         controller.startGameLoop();
-    }
-
-    public void initialize()
-    {
-        printWelcomeMessage();
-        getPlayerNames();
-        controller.startGameLoop();
-    }
-
-    private void getPlayerNames()
-    {
-        System.out.println("Please input name of player 1:\n");
-        Scanner scan = new Scanner(System.in);
-        this.player1.setName(scan.nextLine());
-        System.out.println();
-
-        System.out.println("Please input name of player 1:\n");
-        this.player2.setName(scan.nextLine());
-        System.out.println();
-    }
-
-    private void printWelcomeMessage()
-    {
-        System.out.println("Welcome to the game!");
     }
 }
