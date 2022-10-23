@@ -1,5 +1,7 @@
 package game;
 
+import java.util.Scanner;
+
 public class GameController
 {
     private Die die;
@@ -15,16 +17,43 @@ public class GameController
 
     public void startGameLoop()
     {
+        int currentPlayer = 1;
         int currentDiceRoll = 0;
         while(true)
         {
-            // get current player
-            // get input from player to continue
+            startRound(currentPlayer);
             currentDiceRoll = rollDice();
-            // get field balance change
+            updatePlayerBalance();
             // print field flavour text
             // evaluate game progress
-            // update current player
+            updateCurrentPlayer(currentPlayer);
+        }
+    }
+
+    private void updatePlayerBalance()
+    {
+    }
+
+    private void startRound(int currentPlayer)
+    {
+        while (true)
+        {
+            System.out.print("Player " + currentPlayer + ", please press 'Enter' to roll dice.");
+            Scanner scan = new Scanner(System.in);
+            String input = scan.next();
+            if (input == "") break;
+        }
+    }
+
+    private int updateCurrentPlayer(int currentPlayer)
+    {
+        if (currentPlayer < Player.numberOfPlayers)
+        {
+            currentPlayer += 1;
+        }
+        else
+        {
+            currentPlayer = 1;
         }
     }
 
