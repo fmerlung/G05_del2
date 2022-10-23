@@ -42,7 +42,7 @@ public class GameController
 
     private void evaluateGameProgress()
     {
-        if (this.currentPlayer.balance == 0)
+        if (this.currentPlayer.getBalance() == 0)
         {
             printWinnerAndExit();
         }
