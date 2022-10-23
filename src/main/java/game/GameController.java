@@ -25,11 +25,35 @@ public class GameController
         {
             requestInputToStart();
             rollDice();
-            updatePlayerBalance();
             printFieldDescription();
-            // evaluate game progress
+            updatePlayerBalance();
+            evaluateGameProgress();
+            printScore();
             updateCurrentPlayer();
         }
+    }
+
+    private void printScore()
+    {
+        System.out.println("Current balance: \n" +
+                           "Player 1: " + this.player1.getBalance() + "\n" +
+                           "Player 2: " + this.player2.getBalance());
+    }
+
+    private void evaluateGameProgress()
+    {
+        if (this.currentPlayer.balance == 0)
+        {
+            printWinnerAndExit();
+        }
+    }
+
+    private void printWinnerAndExit()
+    {
+        updateCurrentPlayer();
+        System.out.println("Congratulations player " + this.currentPlayer.id + ", you won with " + this.currentPlayer.getBalance() + " points!");
+        System.out.println("Thanks for playing!");
+        System.exit(0);
     }
 
     private void printFieldDescription()
@@ -39,7 +63,7 @@ public class GameController
 
     private void updatePlayerBalance()
     {
-        this.currentPlayer.addToBalance(Board.getBalanceChange(this.currentDiceRoll));
+        this.currentPlayer.setBalance(this.currentPlayer.getBalance() + Board.getBalanceChange(this.currentDiceRoll));
     }
 
     private void requestInputToStart()
