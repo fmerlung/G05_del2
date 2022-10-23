@@ -8,7 +8,7 @@ public class GameController
     private int currentDiceRoll;
     private Player player1;
     private Player player2;
-    private Player currentPlayer = player1;
+    private Player currentPlayer;
 
     public GameController(Die die, Player player1, Player player2)
     {
