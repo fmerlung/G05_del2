@@ -3,81 +3,120 @@ package game;
 public class Board {
 
     public static String FieldName() {
-        String result = null;
+        String name = null;
         switch (die.roll) {
             case 2:
-                result = "Tower";
+                name = "Tower: ";
                 break;
             case 3:
-                result = "Crater";
+                name = "Crater: ";
                 break;
             case 4:
-                result = "Palace Gates";
+                name = "Palace Gates: ";
                 break;
             case 5:
-                result = "Cold Desert";
+                name = "Cold Desert: ";
                 break;
             case 6:
-                result = "Walled City";
+                name = "Walled City: ";
                 break;
             case 7:
-                result = "Monastery";
+                name = "Monastery: ";
                 break;
             case 8:
-                result = "Black cave";
+                name = "Black cave: ";
                 break;
             case 9:
-                result = "Huts in the mountain";
+                name = "Huts in the mountain: ";
                 break;
             case 10:
-                result = "The Werewall";
+                name = "The Werewall: ";
                 break;
             case 11:
-                result = "The Pit";
+                name = "The Pit: ";
                 break;
             case 12:
-                result = "Goldmine";
+                name = "Goldmine: ";
                 break;
         }
-        return result;
+        return name;
     }
     public static String FieldDescription() {
-        String result = null;
+        String description = null;
         switch (die.roll) {
             case 2:
-                result = "Tower";
+                description = "You reached a tower and saved a princess. She rewards you with 250 goldpieces!";
                 break;
             case 3:
-                result = "Crater";
+                description = "You fell down a crater. A stranger offers to help you up. You have to pay him 100 goldpieces…";
                 break;
             case 4:
-                result = "Palace Gates";
+                description = "You find yourself at some palace gates, a guard pays you to walk away. You receive 100 goldpieces!";
                 break;
             case 5:
-                result = "Cold Desert";
+                description = "You are about to enter the cold desert. You buy some logs to build a bonfire. You pay 20 goldpieces.";
                 break;
             case 6:
-                result = "Walled City";
+                description = "You find a walled city. It’s full of goblins, so you raid it. Your efforts paid off, you stole 180 goldpieces!";
                 break;
             case 7:
-                result = "Monastery";
+                description = "You enter the monastery, and the monks offers you a bed. You found inner peace but 0 goldpieces.";
                 break;
             case 8:
-                result = "Black cave";
+                description = "You enter a dark black cave. You hear monsters in the dark and feel a cold touch. You run screaming out with no concern for your belongings, and lost 70 goldpieces…";
                 break;
             case 9:
-                result = "Huts in the mountain";
+                description = "You find some huts in the mountains, where 3 different size bears lives. You slay them, eat their food, and sleep in the smallest bear’s bed. You found 60 goldpieces!";
                 break;
             case 10:
-                result = "The Werewall";
+                description = "You found yourself in front of a big wall. Werewolves come crawling out of openings in the wall. You manage to run away save, but a werewolf snatched 80 goldpieces from your sachet. Your adrenaline is sky high, you run to another location. ";
                 break;
             case 11:
-                result = "The Pit";
+                description = "You fell down a pit. Molemen offer to help you up, for a price. You pay them 50 goldpieces…";
                 break;
             case 12:
-                result = "Goldmine";
+                description = "You find a mine and start mining. You’ve struck gold and have acquired 650 goldpieces!";
                 break;
         }
-        return result;
+        return description;
+    }
+    public int BalanceChange(){
+        int balance = currentbalance;
+        switch (die.roll){
+            case 2:
+                balance = currentbalance + 250;
+                break;
+            case 3:
+                balance = currentbalance - 100;
+                break;
+            case 4:
+                balance = currentbalance + 100;
+                break;
+            case 5:
+                balance = currentbalance - 20;
+                break;
+            case 6:
+                balance = currentbalance + 180;
+                break;
+            case 7:
+                balance = currentbalance;
+                break;
+            case 8:
+                balance = currentbalance - 70;
+                break;
+            case 9:
+                balance = currentbalance + 60;
+                break;
+            case 10:
+                balance = currentbalance - 80;
+                break;
+            case 11:
+                balance = currentbalance - 50;
+                break;
+            case 12:
+                balance = currentbalance + 650;
+                break;
+        }
+        return balance;
     }
 }
