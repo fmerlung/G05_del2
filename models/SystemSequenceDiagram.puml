@@ -1,0 +1,19 @@
+@startuml
+
+
+participant Main
+participant Game
+participant Gamecontroller
+participant Player
+participant Board
+participant Die
+
+
+Main -> Game : runs
+Game -> Gamecontroller : uses
+Gamecontroller -> Player :
+Player --> Gamecontroller : 
+Gamecontroller -> Die
+Gamecontroller -> Board
+
+@enduml
