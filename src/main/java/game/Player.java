@@ -1,6 +1,4 @@
 public class Player {
-
-    private String name;
     private int balance;
 
     public Player() // Vores construktor
