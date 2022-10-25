@@ -12,8 +12,16 @@ public class GameTest
     void changeBalanceBelowZeroTest()
     {
         Player testPlayer = new Player();
-        assertEquals(1000,testPlayer.getBalance());
-        testPlayer.changeBalance(-5000);
+        testPlayer.changeBalance(-1*(testPlayer.getBalance()-1)); // Changes balance to 1
+        assertEquals(1,testPlayer.getBalance());
+
+        testPlayer.changeBalance(-1); // Changes balance to 0
         assertEquals(0,testPlayer.getBalance());
+
+        testPlayer.changeBalance(-1); // Changes balance to -1. This should automatically set it back to 0
+        assertEquals(0,testPlayer.getBalance()); // Checks if balance is still 0
+
+        testPlayer.changeBalance(-5000); // Changes balance to -5000 for good measure. This should also set it back to 0
+        assertEquals(0,testPlayer.getBalance()); // Checks if balance is still 0
     }
 }
