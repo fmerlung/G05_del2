@@ -6,11 +6,11 @@ public class Player {
         balance = 1000;
     }
 
-    public getBalance(){
+    public int getBalance(){
         return(balance);
     }
 
-    public changeBalance(int balanceChange){
+    public void changeBalance(int balanceChange){
         balance += balanceChange;
 
         if(balance<0){
