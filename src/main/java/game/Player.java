@@ -15,9 +15,4 @@ public class Player {
     public changeBalance(int balanceChange){
         balance += balanceChange;
     }
-
-    public int rollDice(Die die1, Die die2)
-    {
-        return die1.roll()+die2.roll();
-    }
 }
