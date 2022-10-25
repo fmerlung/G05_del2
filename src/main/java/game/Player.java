@@ -12,5 +12,9 @@ public class Player {
 
     public changeBalance(int balanceChange){
         balance += balanceChange;
+
+        if(balance<0){
+            balance = 0;
+        }
     }
 }
