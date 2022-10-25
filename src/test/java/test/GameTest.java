@@ -8,6 +8,14 @@ import static org.junit.jupiter.api.Assertions.*;
 public class GameTest
 {
     @Test
+    @DisplayName("Testing to make sure that the player starts with a balance of 1000")
+    void startingBalanceTest()
+    {
+        Player testPlayer = new Player();
+        assertEquals(1000,testPLayer.getBalance());
+    }
+
+    @Test
     @DisplayName("Testing to make sure that player balance can't be set to negative")
     void changeBalanceBelowZeroTest()
     {
