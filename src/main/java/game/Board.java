@@ -2,9 +2,9 @@ package game;
 
 public class Board {
 
-    public static String FieldName() {
+    public static String getFieldName(int roll) {
         String name = null;
-        switch (die.roll) {
+        switch (roll) {
             case 2:
                 name = "Tower: ";
                 break;
@@ -41,9 +41,10 @@ public class Board {
         }
         return name;
     }
-    public static String FieldDescription() {
+
+    public static String getFieldDescription(int roll) {
         String description = null;
-        switch (die.roll) {
+        switch (roll) {
             case 2:
                 description = "You reached a tower and saved a princess. She rewards you with 250 goldpieces!";
                 break;
@@ -69,7 +70,7 @@ public class Board {
                 description = "You find some huts in the mountains, where 3 different size bears lives. You slay them, eat their food, and sleep in the smallest bear’s bed. You found 60 goldpieces!";
                 break;
             case 10:
-                description = "You found yourself in front of a big wall. Werewolves come crawling out of openings in the wall. You manage to run away save, but a werewolf snatched 80 goldpieces from your sachet. Your adrenaline is sky high, you run to another location. ";
+                description = "You found yourself in front of a big wall. Werewolves come crawling out of openings in the wall. You manage to run away save, but a werewolf snatched 80 goldpieces from your sachet. Your adrenaline is sky high, you run to a new location.";
                 break;
             case 11:
                 description = "You fell down a pit. Molemen offer to help you up, for a price. You pay them 50 goldpieces…";
@@ -80,43 +81,51 @@ public class Board {
         }
         return description;
     }
-    public int BalanceChange(){
-        int balance = currentbalance;
-        switch (die.roll){
+
+    public static int getBalanceChange(int roll) {
+        int balance = 0;
+        switch (roll) {
             case 2:
-                balance = currentbalance + 250;
+                balance = 250;
                 break;
             case 3:
-                balance = currentbalance - 100;
+                balance = -100;
                 break;
             case 4:
-                balance = currentbalance + 100;
+                balance = 100;
                 break;
             case 5:
-                balance = currentbalance - 20;
+                balance = -20;
                 break;
             case 6:
-                balance = currentbalance + 180;
+                balance = -180;
                 break;
             case 7:
-                balance = currentbalance;
+                balance = 0;
                 break;
             case 8:
-                balance = currentbalance - 70;
+                balance = -70;
                 break;
             case 9:
-                balance = currentbalance + 60;
+                balance = +60;
                 break;
             case 10:
-                balance = currentbalance - 80;
+                balance = -80;
                 break;
             case 11:
-                balance = currentbalance - 50;
+                balance = -50;
                 break;
             case 12:
-                balance = currentbalance + 650;
+                balance = 650;
                 break;
         }
         return balance;
+    }
+
+    public static String getFieldEffect(int roll) {
+        if (roll == 10) {
+            return "Extra turn";
+        }
+        return null;
     }
 }
