@@ -15,10 +15,12 @@ instructions
 class Die{
 Die's
 getFacevalue
-roll
+roll()
 }
 class Board{
-User interface
+getFieldDescription()
+getFieldName()
+getBalanceChange()
 }
 class Main{
 Run
