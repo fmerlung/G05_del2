@@ -1,6 +1,8 @@
-out/
 .idea/
+log/
+target/
 *.iml
+*.iws
 *.zip
 *.class
-*.xml
+
