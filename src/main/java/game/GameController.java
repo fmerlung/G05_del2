@@ -26,7 +26,7 @@ public class GameController
         while(true)
         {
             requestInputToStart();
-            rollDice();
+            rollDiceAndPrint();
             printFieldDescription();
             updatePlayerBalance();
             evaluateGameProgress();
@@ -39,12 +39,13 @@ public class GameController
     {
         System.out.println("Current balance: \n" +
                            "Player 1: " + this.player1.getBalance() + "\n" +
-                           "Player 2: " + this.player2.getBalance());
+                           "Player 2: " + this.player2.getBalance() +
+                           "\n");
     }
 
     private void evaluateGameProgress()
     {
-        if (this.currentPlayer.getBalance() == 0)
+        if (this.currentPlayer.getBalance() >= 3000)
         {
             printWinnerAndExit();
         }
@@ -52,7 +53,6 @@ public class GameController
 
     private void printWinnerAndExit()
     {
-        updateCurrentPlayer();
         System.out.println("Congratulations player " + this.currentPlayer.getTurnOrderId() + ", you won with " + this.currentPlayer.getBalance() + " points!");
         System.out.println("Thanks for playing!");
         System.exit(0);
@@ -81,18 +81,20 @@ public class GameController
 
     private void updateCurrentPlayer()
     {
-        if (this.currentPlayer.getTurnOrderId() == 1)
+        if (Board.getFieldEffect(this.currentDiceRoll) != "Extra turn")
         {
-            this.currentPlayer = this.player2;
-        }
-        else
-        {
-            this.currentPlayer = this.player1;
+            if (this.currentPlayer.getTurnOrderId() == 1) {
+                this.currentPlayer = this.player2;
+            }
+            else {
+                this.currentPlayer = this.player1;
+            }
         }
     }
 
-    private void rollDice()
+    private void rollDiceAndPrint()
     {
         this.currentDiceRoll = this.die.roll() + this.die.roll();
+        System.out.println("You rolled " + this.currentDiceRoll);
     }
 }
