@@ -11,15 +11,15 @@ public class GameTest
     @DisplayName("Testing to make sure that the player starts with a balance of 1000")
     void startingBalanceTest()
     {
-        Player testPlayer = new Player();
-        assertEquals(1000,testPLayer.getBalance());
+        game.Player testPlayer = new game.Player();
+        assertEquals(1000,testPlayer.getBalance());
     }
 
     @Test
     @DisplayName("Testing to make sure that player balance can't be set to negative")
     void changeBalanceBelowZeroTest()
     {
-        Player testPlayer = new Player();
+        game.Player testPlayer = new game.Player();
         testPlayer.changeBalance(-1*(testPlayer.getBalance()-1)); // Changes balance to 1
         assertEquals(1,testPlayer.getBalance());
 
