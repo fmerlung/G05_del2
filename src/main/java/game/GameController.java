@@ -10,6 +10,8 @@ public class GameController
     private Player player2;
     private Player currentPlayer;
 
+    private BoardGUI()
+
     public GameController(Die die, Player player1, Player player2)
     {
         this.die = die;
