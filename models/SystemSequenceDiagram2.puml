@@ -1,0 +1,12 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+actor Observer
+participant System
+
+Observer -> System : playGame
+loop no Winner
+System --> Observer: currentPlayer, diceTotal, fieldNr, PlayerScore
+end
+System --> Observer: returnsWinner
+
+@enduml
