@@ -6,7 +6,7 @@ public class Player {
         balance = 1000;
     }
 
-    public getBalance(){
+    public int getBalance(){
         return(balance);
     }
 
