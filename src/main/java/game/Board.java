@@ -98,7 +98,7 @@ public class Board {
                 balance = -20;
                 break;
             case 6:
-                balance = -180;
+                balance = +180;
                 break;
             case 7:
                 balance = 0;
