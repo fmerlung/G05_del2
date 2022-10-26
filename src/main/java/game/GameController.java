@@ -14,7 +14,9 @@ public class GameController
     {
         this.die = die;
         this.player1 = player1;
+        this.player1.setTurnOrderId(1);
         this.player2 = player2;
+        this.player2.setTurnOrderId(2);
         this.currentDiceRoll = 0;
         this.currentPlayer = this.player1;
     }
@@ -51,7 +53,7 @@ public class GameController
     private void printWinnerAndExit()
     {
         updateCurrentPlayer();
-        System.out.println("Congratulations player " + this.currentPlayer.id + ", you won with " + this.currentPlayer.getBalance() + " points!");
+        System.out.println("Congratulations player " + this.currentPlayer.getTurnOrderId() + ", you won with " + this.currentPlayer.getBalance() + " points!");
         System.out.println("Thanks for playing!");
         System.exit(0);
     }
@@ -70,7 +72,7 @@ public class GameController
     {
         while (true)
         {
-            System.out.print("Player " + this.currentPlayer.id + ", please press 'Enter' to roll dice.");
+            System.out.print("Player " + this.currentPlayer.getTurnOrderId() + ", please press 'Enter' to roll dice.");
             Scanner scan = new Scanner(System.in);
             String input = scan.nextLine();
             if (input == "") break;
@@ -79,7 +81,7 @@ public class GameController
 
     private void updateCurrentPlayer()
     {
-        if (this.currentPlayer.id = 1)
+        if (this.currentPlayer.getTurnOrderId() == 1)
         {
             this.currentPlayer = this.player2;
         }
