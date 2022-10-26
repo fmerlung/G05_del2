@@ -14,15 +14,13 @@ loop no winner
 Game -> Gamecontroller : uses
 Gamecontroller -> Player : whichPlayer
 Player --> Gamecontroller : Player1or2
+loop DiceTotal = 10
 Gamecontroller -> Die : rollDice
 Die --> Gamecontroller : returnsDiceTotal
-Gamecontroller -> Board : whichField
-Board --> Gamecontroller : returnsFieldNr
-else if (FieldNr = 10)
-Board --> Gamecontroller : ekstraTurn
-else
+Gamecontroller -> Board : getFieldInfo
+Board --> Gamecontroller : returnsFieldInfo
 Gamecontroller --> Game : printsPlayerScore
-
+end
 end
 Gamecontroller --> Game : returnsWinner
 Game --> Main : printsWinner
