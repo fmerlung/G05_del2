@@ -10,7 +10,7 @@ public class Player {
         return(balance);
     }
 
-    public changeBalance(int balanceChange){
+    public void changeBalance(int balanceChange){
         balance += balanceChange;
 
         if(balance<0){
