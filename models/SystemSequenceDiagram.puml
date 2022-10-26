@@ -10,10 +10,21 @@ participant Die
 
 
 Main -> Game : runs
+loop no winner
 Game -> Gamecontroller : uses
-Gamecontroller -> Player :
-Player --> Gamecontroller : 
-Gamecontroller -> Die
-Gamecontroller -> Board
+Gamecontroller -> Player : whichPlayer
+Player --> Gamecontroller : Player1or2
+Gamecontroller -> Die : rollDice
+Die --> Gamecontroller : returnsDiceTotal
+Gamecontroller -> Board : whichField
+Board --> Gamecontroller : returnsFieldNr
+else if (FieldNr = 10)
+Board --> Gamecontroller : ekstraTurn
+else
+Gamecontroller --> Game : printsPlayerScore
+
+end
+Gamecontroller --> Game : returnsWinner
+Game --> Main : printsWinner
 
 @enduml
