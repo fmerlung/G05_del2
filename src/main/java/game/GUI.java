@@ -88,7 +88,7 @@ public class GUI {
         GUI_Street felt10 = new GUI_Street();
         felt10.setTitle(Board.getFieldName(10));
         felt10.setDescription(Board.getFieldDescription(10));
-        felt10.setSubText(Integer.toString(Board.getBalanceChange(10)));
+        felt10.setSubText(Integer.toString(Board.getBalanceChange(10))+", "+Board.getFieldEffect(10));
         felt10.setBackGroundColor(Color.WHITE);
         fields[9] = felt10;
 
