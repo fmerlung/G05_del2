@@ -12,6 +12,8 @@ public class GUI {
     private GUI_Player player2;
     private GUI_Field[] fields;
     public GUI(){
+        this.fields = new GUI_Field[12];
+        SetFieldInformation();
         this.gui = new gui_main.GUI(fields, Color.WHITE);
         this.car1 = new GUI_Car();
         this.car1.setPrimaryColor(Color.YELLOW);
@@ -19,7 +21,6 @@ public class GUI {
         this.car2.setPrimaryColor(Color.RED);
         this.player1 = new GUI_Player("Player 1",1000, this.car1);
         this.player2 = new GUI_Player("Player 2",1000, this.car2);
-        this.fields = new GUI_Field[12];
     }
 
     public void SetFieldInformation() {
