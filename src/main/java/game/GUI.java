@@ -123,9 +123,39 @@ public class GUI {
 
     }
 
-    public void MoveCarToField(int dieRoll1, int dieRoll2){
-        fields[dieRoll1-1].setCar(player1, true);
-        fields[dieRoll2-1].setCar(player2, true);
+    public void MoveCarToField(int dieRoll1, int dieRoll2, Player currentPlayer){
+        if(currentPlayer.getTurnOrderId() ==1) {
+            // Moves player 1 to current location
+            for(int i = 0; i < 12; ++i){
+                fields[i].setCar(player1,false);
+            }
+            fields[dieRoll1 + dieRoll2].setCar(player1, true);
+
+            // Moves player 2 back to start
+            for(int i = 0; i < 12; ++i){
+                fields[i].setCar(player2,false);
+            }
+            fields[0].setCar(player2, true);
+        }
+        else
+        {
+            // Moves player 2 to current location
+            for(int i = 0; i < 12; ++i){
+                fields[i].setCar(player2,false);
+            }
+            fields[dieRoll1 + dieRoll2].setCar(player2, true);
+
+            // Moves player 1 back to start
+            for(int i = 0; i < 12; ++i){
+                fields[i].setCar(player1,false);
+            }
+            fields[0].setCar(player1, true);
+        }
+    }
+
+    public void moveCarsToStart(){
+        fields[0].setCar(player1, true);
+        fields[0].setCar(player2, true);
     }
 
     public void displayDiceButton()

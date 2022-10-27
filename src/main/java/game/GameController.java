@@ -29,12 +29,14 @@ public class GameController
     {
 
         gui.AddPlayerToBoard();
+        gui.moveCarsToStart();
 
         while(true)
         {
             gui.displayDiceButton();
             rollDice();
             gui.DisplayDieRoll(die1.getFaceValue(),die2.getFaceValue());
+            gui.MoveCarToField(die1.getFaceValue(),die2.getFaceValue(),currentPlayer);
             printFieldDescription();
             updatePlayerBalance();
             gui.DisplayPlayerBalance(player1.getBalance(),player2.getBalance());
