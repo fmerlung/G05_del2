@@ -33,7 +33,7 @@ public class GameController
 
         while(true)
         {
-            gui.displayDiceButton();
+            gui.displayDiceButton(currentPlayer);
             rollDice();
             gui.DisplayDieRoll(die1.getFaceValue(),die2.getFaceValue());
             gui.MoveCarToField(die1.getFaceValue(),die2.getFaceValue(),currentPlayer);

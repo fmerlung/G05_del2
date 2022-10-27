@@ -158,9 +158,19 @@ public class GUI {
         fields[0].setCar(player2, true);
     }
 
-    public void displayDiceButton()
+    public void displayDiceButton(Player currentPlayer)
     {
-        gui.getUserButtonPressed("","Throw dice!").equals("Throw dice!");
+        String playerName;
+        if(currentPlayer.getTurnOrderId() ==1) {
+            playerName = "Player 1";
+        }
+        else
+        {
+            playerName = "Player 2";
+        }
+
+
+        gui.getUserButtonPressed("",playerName+", do you want to throw the dice?").equals(playerName+", do you want to throw the dice?");
     }
 
     public void displayWinner(Player currentPlayer){
