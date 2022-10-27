@@ -31,67 +31,78 @@ public class GUI {
 
         GUI_Street felt2 = new GUI_Street();
         felt2.setTitle(Board.getFieldName(2));
-        felt2.setSubText(Board.getFieldDescription(2));
+        felt2.setDescription(Board.getFieldDescription(2));
+        felt2.setSubText(Integer.toString(Board.getBalanceChange(2)));
         felt2.setBackGroundColor(Color.WHITE);
         fields[1] = felt2;
 
         GUI_Street felt3 = new GUI_Street();
         felt3.setTitle(Board.getFieldName(3));
-        felt3.setSubText(Board.getFieldDescription(3));
+        felt3.setDescription(Board.getFieldDescription(3));
+        felt3.setSubText(Integer.toString(Board.getBalanceChange(3)));
         felt3.setBackGroundColor(Color.WHITE);
         fields[2] = felt3;
 
         GUI_Street felt4 = new GUI_Street();
         felt4.setTitle(Board.getFieldName(4));
-        felt4.setSubText(Board.getFieldDescription(4));
+        felt4.setDescription(Board.getFieldDescription(4));
+        felt4.setSubText(Integer.toString(Board.getBalanceChange(4)));
         felt4.setBackGroundColor(Color.WHITE);
         fields[3] = felt4;
 
         GUI_Street felt5 = new GUI_Street();
-        felt5.setTitle(Board.getFieldDescription(5));
-        felt5.setSubText(Board.getFieldDescription(5));
+        felt5.setTitle(Board.getFieldName(5));
+        felt5.setDescription(Board.getFieldDescription(5));
+        felt5.setSubText(Integer.toString(Board.getBalanceChange(5)));
         felt5.setBackGroundColor(Color.WHITE);
         fields[4] = felt5;
 
         GUI_Street felt6 = new GUI_Street();
-        felt6.setTitle(Board.getFieldDescription(6));
-        felt6.setSubText(Board.getFieldDescription(6));
+        felt6.setTitle(Board.getFieldName(6));
+        felt6.setDescription(Board.getFieldDescription(6));
+        felt6.setSubText(Integer.toString(Board.getBalanceChange(6)));
         felt6.setBackGroundColor(Color.WHITE);
         fields[5] = felt6;
 
         GUI_Street felt7 = new GUI_Street();
-        felt7.setTitle(Board.getFieldDescription(7));
-        felt7.setSubText(Board.getFieldDescription(7));
+        felt7.setTitle(Board.getFieldName(7));
+        felt7.setDescription(Board.getFieldDescription(7));
+        felt7.setSubText(Integer.toString(Board.getBalanceChange(7)));
         felt7.setBackGroundColor(Color.WHITE);
         fields[6] = felt7;
 
         GUI_Street felt8 = new GUI_Street();
-        felt8.setTitle(Board.getFieldDescription(8));
-        felt8.setSubText(Board.getFieldDescription(8));
+        felt8.setTitle(Board.getFieldName(8));
+        felt8.setDescription(Board.getFieldDescription(8));
+        felt8.setSubText(Integer.toString(Board.getBalanceChange(8)));
         felt8.setBackGroundColor(Color.WHITE);
         fields[7] = felt8;
 
         GUI_Street felt9 = new GUI_Street();
-        felt9.setTitle(Board.getFieldDescription(9));
-        felt9.setSubText(Board.getFieldDescription(9));
+        felt9.setTitle(Board.getFieldName(9));
+        felt9.setDescription(Board.getFieldDescription(9));
+        felt9.setSubText(Integer.toString(Board.getBalanceChange(9)));
         felt9.setBackGroundColor(Color.WHITE);
         fields[8] = felt9;
 
         GUI_Street felt10 = new GUI_Street();
-        felt10.setTitle(Board.getFieldDescription(10));
-        felt10.setSubText(Board.getFieldDescription(10));
+        felt10.setTitle(Board.getFieldName(10));
+        felt10.setDescription(Board.getFieldDescription(10));
+        felt10.setSubText(Integer.toString(Board.getBalanceChange(10)));
         felt10.setBackGroundColor(Color.WHITE);
         fields[9] = felt10;
 
         GUI_Street felt11 = new GUI_Street();
-        felt11.setTitle(Board.getFieldDescription(11));
-        felt11.setSubText(Board.getFieldDescription(11));
+        felt11.setTitle(Board.getFieldName(11));
+        felt11.setDescription(Board.getFieldDescription(11));
+        felt11.setSubText(Integer.toString(Board.getBalanceChange(11)));
         felt11.setBackGroundColor(Color.WHITE);
         fields[10] = felt11;
 
         GUI_Street felt12 = new GUI_Street();
-        felt12.setTitle(Board.getFieldDescription(12));
-        felt12.setSubText(Board.getFieldDescription(12));
+        felt12.setTitle(Board.getFieldName(12));
+        felt12.setDescription(Board.getFieldDescription(12));
+        felt12.setSubText(Integer.toString(Board.getBalanceChange(12)));
         felt12.setBackGroundColor(Color.WHITE);
         fields[11] = felt12;
     }

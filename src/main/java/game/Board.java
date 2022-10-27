@@ -46,7 +46,7 @@ public class Board {
         String description = null;
         switch (roll) {
             case 2:
-                description = "You reached a tower and saved a princess. She rewards you with 250 goldpieces!";
+                description = "You reached a tower and \nsaved a princess. She \nrewards you with \n250 goldpieces!";
                 break;
             case 3:
                 description = "You fell down a crater. A stranger offers to help you up. You have to pay him 100 goldpieces…";
