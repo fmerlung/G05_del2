@@ -129,7 +129,7 @@ public class GUI {
             for(int i = 0; i < 12; ++i){
                 fields[i].setCar(player1,false);
             }
-            fields[dieRoll1 + dieRoll2].setCar(player1, true);
+            fields[dieRoll1 + dieRoll2 - 1].setCar(player1, true);
 
             // Moves player 2 back to start
             for(int i = 0; i < 12; ++i){
@@ -143,7 +143,7 @@ public class GUI {
             for(int i = 0; i < 12; ++i){
                 fields[i].setCar(player2,false);
             }
-            fields[dieRoll1 + dieRoll2].setCar(player2, true);
+            fields[dieRoll1 + dieRoll2 - 1].setCar(player2, true);
 
             // Moves player 1 back to start
             for(int i = 0; i < 12; ++i){
@@ -160,9 +160,7 @@ public class GUI {
 
     public void displayDiceButton()
     {
-        //boolean selection = gui.getUserLeftButtonPressed("What do you want to do?","Roll dice","Exit game");
         gui.getUserButtonPressed("","Throw dice!").equals("Throw dice!");
-
     }
 
     public void displayWinner(Player currentPlayer){

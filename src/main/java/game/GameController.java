@@ -78,7 +78,7 @@ public class GameController
 
     private void updatePlayerBalance()
     {
-        this.currentPlayer.changeBalance(this.currentPlayer.getBalance() + Board.getBalanceChange(this.currentDiceRoll));
+        this.currentPlayer.changeBalance(Board.getBalanceChange(this.currentDiceRoll));
     }
 
     private void updateCurrentPlayer()
