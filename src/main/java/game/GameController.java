@@ -9,8 +9,7 @@ public class GameController
     private Player player1;
     private Player player2;
     private Player currentPlayer;
-
-    private BoardGUI()
+    private GUI gui;
 
     public GameController(Die die, Player player1, Player player2)
     {
@@ -21,6 +20,7 @@ public class GameController
         this.player2.setTurnOrderId(2);
         this.currentDiceRoll = 0;
         this.currentPlayer = this.player1;
+        this.gui = new GUI();
     }
 
     public void startGameLoop()
@@ -28,7 +28,7 @@ public class GameController
         while(true)
         {
             requestInputToStart();
-            rollDiceAndPrint();
+            gui.DisplayDieRoll(rollDice(), rollDice());
             printFieldDescription();
             updatePlayerBalance();
             evaluateGameProgress();
@@ -41,13 +41,12 @@ public class GameController
     {
         System.out.println("Current balance: \n" +
                            "Player 1: " + this.player1.getBalance() + "\n" +
-                           "Player 2: " + this.player2.getBalance() +
-                           "\n");
+                           "Player 2: " + this.player2.getBalance());
     }
 
     private void evaluateGameProgress()
     {
-        if (this.currentPlayer.getBalance() >= 3000)
+        if (this.currentPlayer.getBalance() == 0)
         {
             printWinnerAndExit();
         }
@@ -55,6 +54,7 @@ public class GameController
 
     private void printWinnerAndExit()
     {
+        updateCurrentPlayer();
         System.out.println("Congratulations player " + this.currentPlayer.getTurnOrderId() + ", you won with " + this.currentPlayer.getBalance() + " points!");
         System.out.println("Thanks for playing!");
         System.exit(0);
@@ -67,7 +67,7 @@ public class GameController
 
     private void updatePlayerBalance()
     {
-        this.currentPlayer.changeBalance(Board.getBalanceChange(this.currentDiceRoll));
+        this.currentPlayer.changeBalance(this.currentPlayer.getBalance() + Board.getBalanceChange(this.currentDiceRoll));
     }
 
     private void requestInputToStart()
@@ -83,20 +83,18 @@ public class GameController
 
     private void updateCurrentPlayer()
     {
-        if (Board.getFieldEffect(this.currentDiceRoll) != "Extra turn")
+        if (this.currentPlayer.getTurnOrderId() == 1)
         {
-            if (this.currentPlayer.getTurnOrderId() == 1) {
-                this.currentPlayer = this.player2;
-            }
-            else {
-                this.currentPlayer = this.player1;
-            }
+            this.currentPlayer = this.player2;
+        }
+        else
+        {
+            this.currentPlayer = this.player1;
         }
     }
 
-    private void rollDiceAndPrint()
+    private void rollDice()
     {
         this.currentDiceRoll = this.die.roll() + this.die.roll();
-        System.out.println("You rolled " + this.currentDiceRoll);
     }
 }
