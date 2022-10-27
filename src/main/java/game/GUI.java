@@ -27,6 +27,8 @@ public class GUI {
 
         GUI_Start start = new GUI_Start();
         start.setTitle("Start");
+        start.setDescription("");
+        start.setSubText("");
         fields[0] = start;
 
         GUI_Street felt2 = new GUI_Street();
