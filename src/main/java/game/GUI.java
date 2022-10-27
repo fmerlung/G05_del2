@@ -109,8 +109,7 @@ public class GUI {
         gui.addPlayer(player1);
         gui.addPlayer(player2);
 
-        gui.showMessage("Klik start");
-        boolean selection = gui.getUserLeftButtonPressed("vælg Ja eller nej", "Ja", "Nej");
+
     }
 
     public void MoveCarToField(int dieRoll1, int dieRoll2){

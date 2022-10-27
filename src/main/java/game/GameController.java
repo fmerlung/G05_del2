@@ -27,14 +27,16 @@ public class GameController
 
     public void startGameLoop()
     {
+        gui.AddPlayerToBoard();
+
         while(true)
         {
             requestInputToStart();
-            gui.DisplayPlayerBalance(player1.getBalance(),player2.getBalance());
             rollDice();
             gui.DisplayDieRoll(die1.getFaceValue(),die2.getFaceValue());
             printFieldDescription();
             updatePlayerBalance();
+            gui.DisplayPlayerBalance(player1.getBalance(),player2.getBalance());
             evaluateGameProgress();
             printScore();
             updateCurrentPlayer();
