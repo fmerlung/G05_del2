@@ -55,7 +55,7 @@ public class GameController
 
     private void evaluateGameProgress()
     {
-        if (this.currentPlayer.getBalance() == 0)
+        if (this.currentPlayer.getBalance() >= 3000)
         {
             printWinnerAndExit();
         }
@@ -66,6 +66,8 @@ public class GameController
         updateCurrentPlayer();
         System.out.println("Congratulations player " + this.currentPlayer.getTurnOrderId() + ", you won with " + this.currentPlayer.getBalance() + " points!");
         System.out.println("Thanks for playing!");
+
+        gui.displayWinner(currentPlayer);
         System.exit(0);
     }
 

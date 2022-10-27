@@ -164,4 +164,14 @@ public class GUI {
         gui.getUserButtonPressed("","Throw dice!").equals("Throw dice!");
 
     }
+
+    public void displayWinner(Player currentPlayer){
+        if(currentPlayer.getTurnOrderId() ==1) {
+            gui.showMessage("Player 1 wins!");
+        }
+        else
+        {
+            gui.showMessage("Player 2 wins!");
+        }
+    }
 }
