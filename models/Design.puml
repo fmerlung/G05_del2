@@ -1,38 +1,64 @@
 @startuml
 'https://plantuml.com/class-diagram
+skinparam classAttributeIconSize 0
 
 class Player{
-balance
-name
+- balance : int
+- turnOrderId : int
++ getTurnOrderId() : int
++ setTurnOrderId() : void
++ getBalance() : int
++ changeBalance() : int
 }
 class Gamecontroller{
-Balance + -
-winningCondition
+- currentDiceroll: int
+- Player
+- Die
++ startGameLoop()
+- printScore()
+- evaluateGameProgress()
+-printWinnerAndExit()
+-printFieldDescription()
+-updatePlayerBalance()
+-requestInputToStart()
+-updateCurrentPlayer()
+-rollDice()
 }
 class Game{
-instructions
+- Player
+- Die
++ run()
 }
 class Die{
-Die's
-getFacevalue
-
-roll()
+- MAX : int
+- faceValue : int
++getFacevalue() : int
++roll() : int
++toString() : String
 }
 class Board{
-getFieldDescription()
-getFieldName()
-getBalanceChange()
+{static}+ getFieldDescription() : String
+{static}+ getFieldName() : String
+{static}+ getBalanceChange() : int
 }
 class Main{
-Run
++ main()
+}
+class GUI{
++setFieldInformation() : void
++displayDieRoll() :
++displayPlayerBalance() :
++addPlayerToBoard() :
++moveCarToField() :
+
 }
 
 Die "2"--"1" Game : containes
 Gamecontroller "1"--"1" Game : evaluates
-
-Gamecontroller "1"--"1" Board : UI
+Gamecontroller "1"--"1" Board : evaluates
 Game "1"--"1" Main : runs
-Player "2"--"1" Game : plays
+Player "2"--"1" Game : containes
+GUI"1" -- "1"Gamecontroller : sendsInformation
 
 
 
