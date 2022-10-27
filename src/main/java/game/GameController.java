@@ -9,8 +9,7 @@ public class GameController
     private Player player1;
     private Player player2;
     private Player currentPlayer;
-
-    private BoardGUI()
+    private GUI gui;
 
     public GameController(Die die, Player player1, Player player2)
     {
@@ -21,6 +20,7 @@ public class GameController
         this.player2.setTurnOrderId(2);
         this.currentDiceRoll = 0;
         this.currentPlayer = this.player1;
+        this.gui = new GUI();
     }
 
     public void startGameLoop()
@@ -28,7 +28,7 @@ public class GameController
         while(true)
         {
             requestInputToStart();
-            rollDice();
+            gui.DisplayDieRoll(rollDice(), rollDice());
             printFieldDescription();
             updatePlayerBalance();
             evaluateGameProgress();

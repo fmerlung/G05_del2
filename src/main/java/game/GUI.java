@@ -100,8 +100,8 @@ public class GUI {
         this.player2.setBalance(balance);
     }
     
-    public void DisplayDieRoll(int DieRoll) {
-        gui.setDice(DieRoll, DieRoll);
+    public void DisplayDieRoll(int DieRoll1, int DieRoll2) {
+        gui.setDice(DieRoll1, DieRoll2);
     }
     
     public void AddPlayerToBoard() {
@@ -112,7 +112,7 @@ public class GUI {
         boolean selection = gui.getUserLeftButtonPressed("vælg Ja eller nej", "Ja", "Nej");
     }
 
-    public void MoveCarToField(int die){
+    public void MoveCarToField(int DieRoll){
         fields[die-1].setCar(player1, true);
         fields[die-1].setCar(player2, true);
     }
