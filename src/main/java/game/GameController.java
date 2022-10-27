@@ -27,11 +27,12 @@ public class GameController
 
     public void startGameLoop()
     {
+
         gui.AddPlayerToBoard();
 
         while(true)
         {
-            requestInputToStart();
+            gui.displayDiceButton();
             rollDice();
             gui.DisplayDieRoll(die1.getFaceValue(),die2.getFaceValue());
             printFieldDescription();
@@ -74,17 +75,6 @@ public class GameController
     private void updatePlayerBalance()
     {
         this.currentPlayer.changeBalance(this.currentPlayer.getBalance() + Board.getBalanceChange(this.currentDiceRoll));
-    }
-
-    private void requestInputToStart()
-    {
-        while (true)
-        {
-            System.out.print("Player " + this.currentPlayer.getTurnOrderId() + ", please press 'Enter' to roll dice.");
-            Scanner scan = new Scanner(System.in);
-            String input = scan.nextLine();
-            if (input == "") break;
-        }
     }
 
     private void updateCurrentPlayer()

@@ -127,4 +127,11 @@ public class GUI {
         fields[dieRoll1-1].setCar(player1, true);
         fields[dieRoll2-1].setCar(player2, true);
     }
+
+    public void displayDiceButton()
+    {
+        //boolean selection = gui.getUserLeftButtonPressed("What do you want to do?","Roll dice","Exit game");
+        gui.getUserButtonPressed("","Throw dice!").equals("Throw dice!");
+
+    }
 }
