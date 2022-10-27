@@ -83,13 +83,15 @@ public class GameController
 
     private void updateCurrentPlayer()
     {
-        if (this.currentPlayer.getTurnOrderId() == 1)
-        {
-            this.currentPlayer = this.player2;
-        }
-        else
-        {
-            this.currentPlayer = this.player1;
+        if(Board.getFieldEffect(die1.getFaceValue()+die2.getFaceValue())!="Extra turn"){
+            if (this.currentPlayer.getTurnOrderId() == 1)
+            {
+                this.currentPlayer = this.player2;
+            }
+            else
+            {
+                this.currentPlayer = this.player1;
+            }
         }
     }
 
