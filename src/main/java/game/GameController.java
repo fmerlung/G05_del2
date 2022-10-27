@@ -4,16 +4,18 @@ import java.util.Scanner;
 
 public class GameController
 {
-    private Die die;
+    private Die die1;
+    private Die die2;
     private int currentDiceRoll;
     private Player player1;
     private Player player2;
     private Player currentPlayer;
     private GUI gui;
 
-    public GameController(Die die, Player player1, Player player2)
+    public GameController(Die die1, Die die2, Player player1, Player player2)
     {
-        this.die = die;
+        this.die1 = die1;
+        this.die2 = die2;
         this.player1 = player1;
         this.player1.setTurnOrderId(1);
         this.player2 = player2;
@@ -28,7 +30,9 @@ public class GameController
         while(true)
         {
             requestInputToStart();
-            gui.DisplayDieRoll(die.getFaceValue(),die.getFaceValue());
+            gui.DisplayPlayerBalance(player1.getBalance(),player2.getBalance());
+            rollDice();
+            gui.DisplayDieRoll(die1.getFaceValue(),die2.getFaceValue());
             printFieldDescription();
             updatePlayerBalance();
             evaluateGameProgress();
@@ -95,6 +99,6 @@ public class GameController
 
     private void rollDice()
     {
-        this.currentDiceRoll = this.die.roll() + this.die.roll();
+        this.currentDiceRoll = this.die1.roll() + this.die2.roll();
     }
 }

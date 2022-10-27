@@ -96,9 +96,9 @@ public class GUI {
         fields[11] = felt12;
     }
     
-    public void ChangePlayerBalance(int balance) {
-        this.player1.setBalance(balance);
-        this.player2.setBalance(balance);
+    public void DisplayPlayerBalance(int balance1, int balance2) {
+        this.player1.setBalance(balance1);
+        this.player2.setBalance(balance2);
     }
     
     public void DisplayDieRoll(int DieRoll1, int DieRoll2) {
