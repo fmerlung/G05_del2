@@ -10,16 +10,17 @@ participant Die
 
 
 Main -> Game : runs
-loop no winner
 Game -> Gamecontroller : uses
-Gamecontroller -> Player : whichPlayer
-Player --> Gamecontroller : Player1or2
-loop DiceTotal = 10
+Gamecontroller -> Player : howManyPlayers
+Player --> Gamecontroller : returns2Players
+loop no winner
 Gamecontroller -> Die : rollDice
 Die --> Gamecontroller : returnsDiceTotal
 Gamecontroller -> Board : getFieldInfo
 Board --> Gamecontroller : returnsFieldInfo
 Gamecontroller --> Game : printsPlayerScore
+alt DiceTotal != 10
+Gamecontroller -> Gamecontroller : switchPlayer
 end
 end
 Gamecontroller --> Game : returnsWinner

@@ -1,0 +1,40 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Player{
+balance
+name
+}
+class Gamecontroller{
+Balance + -
+winningCondition
+}
+class Game{
+instructions
+}
+class Die{
+Die's
+getFacevalue
+
+roll()
+}
+class Board{
+getFieldDescription()
+getFieldName()
+getBalanceChange()
+}
+class Main{
+Run
+}
+
+Die "2"--"1" Game : containes
+Gamecontroller "1"--"1" Game : evaluates
+
+Gamecontroller "1"--"1" Board : UI
+Game "1"--"1" Main : runs
+Player "2"--"1" Game : plays
+
+
+
+
+@enduml
