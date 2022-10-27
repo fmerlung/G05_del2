@@ -28,7 +28,7 @@ public class GameController
         while(true)
         {
             requestInputToStart();
-            gui.DisplayDieRoll(rollDice(), rollDice());
+            gui.DisplayDieRoll(die.getFaceValue(),die.getFaceValue());
             printFieldDescription();
             updatePlayerBalance();
             evaluateGameProgress();

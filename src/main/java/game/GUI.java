@@ -112,8 +112,8 @@ public class GUI {
         boolean selection = gui.getUserLeftButtonPressed("vælg Ja eller nej", "Ja", "Nej");
     }
 
-    public void MoveCarToField(int DieRoll){
-        fields[die-1].setCar(player1, true);
-        fields[die-1].setCar(player2, true);
+    public void MoveCarToField(int dieRoll1, int dieRoll2){
+        fields[dieRoll1-1].setCar(player1, true);
+        fields[dieRoll2-1].setCar(player2, true);
     }
 }
