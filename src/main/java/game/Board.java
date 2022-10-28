@@ -6,37 +6,37 @@ public class Board {
         String name = null;
         switch (roll) {
             case 2:
-                name = "Tower: ";
+                name = "2. Tower: ";
                 break;
             case 3:
-                name = "Crater: ";
+                name = "3. Crater: ";
                 break;
             case 4:
-                name = "Palace Gates: ";
+                name = "4. Palace Gates: ";
                 break;
             case 5:
-                name = "Cold Desert: ";
+                name = "5. Cold Desert: ";
                 break;
             case 6:
-                name = "Walled City: ";
+                name = "6. Walled City: ";
                 break;
             case 7:
-                name = "Monastery: ";
+                name = "7. Monastery: ";
                 break;
             case 8:
-                name = "Black cave: ";
+                name = "8. Black cave: ";
                 break;
             case 9:
-                name = "Huts in the mountain: ";
+                name = "9. Huts in the mountain: ";
                 break;
             case 10:
-                name = "The Werewall: ";
+                name = "10. The Werewall: ";
                 break;
             case 11:
-                name = "The Pit: ";
+                name = "11. The Pit: ";
                 break;
             case 12:
-                name = "Goldmine: ";
+                name = "12. Goldmine: ";
                 break;
         }
         return name;
@@ -46,7 +46,7 @@ public class Board {
         String description = null;
         switch (roll) {
             case 2:
-                description = "You reached a tower and saved a princess. She rewards you with 250 goldpieces!";
+                description = "You reached a tower and \nsaved a princess. She \nrewards you with \n250 goldpieces!";
                 break;
             case 3:
                 description = "You fell down a crater. A stranger offers to help you up. You have to pay him 100 goldpieces…";
