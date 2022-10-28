@@ -28,6 +28,7 @@ public class GameController
     public void startGameLoop()
     {
 
+        gui.displayMessage();
         gui.AddPlayerToBoard();
         gui.moveCarsToStart();
 

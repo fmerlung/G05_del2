@@ -184,4 +184,8 @@ public class GUI {
             gui.showMessage("Player 1 wins!");
         }
     }
+
+    public void displayMessage(){
+        gui.showMessage("This is a game CDIO del 2 \nThrow Dices to move car \nClick on board fields to read description");
+    }
 }
