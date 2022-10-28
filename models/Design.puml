@@ -14,15 +14,15 @@ class Gamecontroller{
 - currentDiceroll: int
 - Player
 - Die
-+ startGameLoop()
-- printScore()
-- evaluateGameProgress()
--printWinnerAndExit()
--printFieldDescription()
--updatePlayerBalance()
--requestInputToStart()
--updateCurrentPlayer()
--rollDice()
++ startGameLoop() : void
+- printScore() : void
+- evaluateGameProgress() : void
+-printWinnerAndExit() : void
+-printFieldDescription() : void
+-updatePlayerBalance() : void
+-requestInputToStart() : void
+-updateCurrentPlayer() : void
+-rollDiceAndPrint() : void
 }
 class Game{
 - Player
@@ -46,10 +46,11 @@ class Main{
 }
 class GUI{
 +setFieldInformation() : void
-+displayDieRoll() :
-+displayPlayerBalance() :
-+addPlayerToBoard() :
-+moveCarToField() :
++displayDieRoll() : void
++displayPlayerBalance() : void
++addPlayerToBoard() : void
++moveCarToField() : void
++displayWinner() : void
 
 }
 
