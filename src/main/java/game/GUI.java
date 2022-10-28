@@ -177,11 +177,11 @@ public class GUI {
 
     public void displayWinner(Player currentPlayer){
         if(currentPlayer.getTurnOrderId() ==1) {
-            gui.showMessage("Player 1 wins!");
+            gui.showMessage("Player 2 wins!");
         }
         else
         {
-            gui.showMessage("Player 2 wins!");
+            gui.showMessage("Player 1 wins!");
         }
     }
 }
